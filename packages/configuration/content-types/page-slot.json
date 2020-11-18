@@ -6,7 +6,7 @@
         "visualizations": [
         {
             "label": "JSON",
-            "templatedUri":"https://{{vse.domain}}/content/id/{{content.sys.id}}?depth=all&format=inlined",
+            "templatedUri":"https://presalesadisws.s3.eu-west-1.amazonaws.com/dynamic-content/dc-visualization-content-delivery/index.html?vse={{vse.domain}}&id={{content.sys.id}}&format=inlined&depth=all&v2=true",
             "default": true
         }],
         "icons": [
@@ -16,5 +16,5 @@
         }],
         "cards": []
     },
-    "repositories": ["slots"]
+    "repositories": ["pwaslots"]
 }
