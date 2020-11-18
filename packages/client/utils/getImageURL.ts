@@ -44,6 +44,7 @@ export type ImageTransformations = {
     height?: number;
 
     pointOfInterest?: { x: number, y: number };
+    poi?: { x: number, y: number };
     scaleMode?: ImageScaleMode;
     scaleFit?: ImageScaleFit;
     aspectRatio?: string;
@@ -52,17 +53,20 @@ export type ImageTransformations = {
 
 export function getImageURL(image: string | CmsImage, transformations: ImageTransformations = {}): string {
 
-    const {
+    let {
         seoFileName,
         format,
         width,
         height,
         pointOfInterest,
+        poi,
         scaleMode,
         scaleFit,
         aspectRatio,
         upscale
     } = transformations;
+
+    pointOfInterest = pointOfInterest || poi;
 
     let url = typeof image === 'string' ? image :
         `//${image.defaultHost}/i/${encodeURIComponent(image.endpoint)}/${encodeURIComponent(image.name)}`;
