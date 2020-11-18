@@ -6,6 +6,7 @@ import HeroBannerBlock from '../components/HeroBannerBlock';
 import GalleryBlock from '../components/GalleryBlock';
 import Navigation from '../components/Navigation';
 import { fetchContentById } from '../utils/fetchContent';
+import SimpleBanner from '../components/SimpleBanner';
 
 interface Props {
     component: any
@@ -32,6 +33,12 @@ const Visualization: NextPage<Props> = (props: Props) => {
             ComponentType = Navigation;
             break;
     }
+
+    switch (component?._meta?.schema) {
+        case 'https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/simple-banner.json':
+          ComponentType = SimpleBanner;
+          break;
+      }
 
     return (
         <ComponentType {...component} />
