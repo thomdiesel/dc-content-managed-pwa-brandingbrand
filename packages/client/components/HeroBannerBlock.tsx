@@ -16,7 +16,7 @@ const styles = (theme: Theme) => ({
         width: '100%',
         height: '100%',
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'left',
         alignItems: 'center'
     },
     overlayPanel: {
