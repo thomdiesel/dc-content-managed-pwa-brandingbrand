@@ -13,7 +13,7 @@ import HeroBannerBlock from '../components/HeroBannerBlock';
 import GalleryBlock from '../components/GalleryBlock';
 import Sidebar from '../components/Sidebar';
 import { fetchContent } from '../utils/fetchContent';
-import SimpleBanner from '../components/SimpleBanner';
+
 
 interface Props {
     navigation: {
@@ -91,12 +91,6 @@ const Index: NextPage<Props> = (props: Props) => {
                     case 'GalleryBlock':
                         ComponentType = GalleryBlock;
                         break;
-                }
-
-                switch (component?._meta?.schema) {
-                  case 'https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/simple-banner.json':
-                    ComponentType = SimpleBanner;
-                    break;
                 }
                 
                 return <ComponentType {...component} />;
